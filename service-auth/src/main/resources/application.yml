@@ -3,8 +3,17 @@ spring:
     name: service-auth
 
   redis:
-    host: 172.16.10.43
+    host: r-2ze3vf7vdvw0ics2j9pd.redis.rds.aliyuncs.com
     database: 1
+    port: 6379
+    password: Redispassword123
+    timeout: 20000
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 8
+        min-idle: 0
 
 
 server:
