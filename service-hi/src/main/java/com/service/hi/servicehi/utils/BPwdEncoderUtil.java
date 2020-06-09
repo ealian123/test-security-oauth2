@@ -12,4 +12,11 @@ public class BPwdEncoderUtil {
     public static boolean matches(CharSequence rawPassword, String encodedPassword){
         return passwordEncoder.matches(rawPassword, encodedPassword);
     }
+
+    public static void main(String[] args) {
+        String encode = passwordEncoder.encode("123456");
+        System.out.println(encode);
+        boolean matches = passwordEncoder.matches("123456", encode);
+        System.out.println(matches);
+    }
 }

@@ -57,11 +57,10 @@ public class UserController {
 
         User user = userRepository.findByUsername(loginDto.getUsername());
 
-//        if (null == user)
-//            throw new Exception("用户为空，出错了");
+        if (null == user)
+            throw new Exception("用户为空，出错了");
 
-//        if (!BPwdEncoderUtil.matches(loginDto.getPassword(), user.getPassword().replace("{bcrypt}","")))
-        if (!BPwdEncoderUtil.matches(loginDto.getPassword(), "123456".replace("{bcrypt}","")))
+        if (!BPwdEncoderUtil.matches(loginDto.getPassword(), user.getPassword().replace("{bcrypt}","")))
             throw new Exception("密码不正确");
 
         String client_secret = oAuth2ClientProperties.getClientId()+":"+oAuth2ClientProperties.getClientSecret();
