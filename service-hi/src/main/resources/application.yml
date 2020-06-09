@@ -8,10 +8,10 @@ spring:
   application:
     name: service-hi
   datasource:
-      driver-class-name: com.mysql.jdbc.Driver
-      url: jdbc:mysql://172.16.10.44:3306/spring-cloud-auth2-db?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8
-      username: dev
-      password: NHdev2015
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://yjhtest1.mysql.polardb.rds.aliyuncs.com/test?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8
+    username: yjhuser
+    password: Yjh123Password
 
   jpa:
     hibernate:
@@ -23,6 +23,7 @@ security:
     resource:
       jwt:
         key-uri: http://localhost:9098/oauth/token_key
+        key-value: aaaa #这里乱写的，需要配置
     client:
       client-id: client_2
       client-secret: 123456

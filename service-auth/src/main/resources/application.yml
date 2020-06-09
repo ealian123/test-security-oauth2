@@ -3,10 +3,10 @@ spring:
     name: service-auth
 
   datasource:
-      driver-class-name: com.mysql.jdbc.Driver
-      url: jdbc:mysql://172.16.10.44:3306/spring-cloud-auth2-db?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8
-      username: dev
-      password: NHdev2015
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://yjhtest1.mysql.polardb.rds.aliyuncs.com/test?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8
+    username: yjhuser
+    password: Yjh123Password
 
   jpa:
     hibernate:
@@ -14,7 +14,9 @@ spring:
     show-sql: true
 
   redis:
-    host: 172.16.10.43
+    host: r-2ze3vf7vdvw0ics2j9pd.redis.rds.aliyuncs.com
+    port: 6379
+    password: Redispassword123
     database: 1
 
 
