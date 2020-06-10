@@ -9,12 +9,8 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 
 @Configuration
 @EnableWebSecurity
@@ -46,5 +42,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userServiceDetail).passwordEncoder(passwordEncoder());
+////        auth.userDetailsService(userServiceDetail).passwordEncoder(new BCryptPasswordEncoder());
+//        //inMemoryAuthentication 从内存中获取
+//        auth.inMemoryAuthentication().passwordEncoder(
+//                new BCryptPasswordEncoder()).withUser("user_1").password(
+//                        new BCryptPasswordEncoder().encode("123456")).roles("USER");
     }
 }
